@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html class="qp-ui" data-qp-ui="{ 'Futurizr': { 'hasTouch': 'touch' } }">
+<head>
+  <meta charset="utf-8">
+  //= ../template/css.html
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.9/c3.min.css" rel="stylesheet" />
+  <title>MPS Video Ads Module - Full Requirements</title>
+</head>
+<body class="site-material_ext_publish section-animation first-chapter color-branded-content qp-ui" data-qp-ui="{ 'Mask': {} }">
+  <header class="qp-ui" data-qp-ui="{ 'Peekaboo': { 'mobile': 72, 'desktop-sm': 72, 'default': 192 } }">
+    <div class="header-wrapper qp-ui" data-qp-ui="{ 'Peekaboo': { 'mobile': 28, 'desktop-sm': 28, 'default': 82 } }">
+      <div class="header-title">
+        <span class="section-title">Requirements</span>
+        <span class="chapter-title">
+          <span class="title-separator">—</span>
+          Full
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <button class="hamburger-button qp-ui" data-qp-ui="{ 'SideNavToggle': {} }" role="tab"><i class="material-icons material-spec-icon" title="Show navigation">menu</i></button>
+  </nav>
+
+  //= ../template/menu.html
+
+  <div id="grid-cont">
+    <section class="grid_outer chapter">
+      <h1 class="chapter-title">Full Requirements</h1>
+      <div class="chapter-intro">
+        <p style="text-align: justify;">From working with users and the product team, we were able to gather more complex requirements for the full version of the Video Ads Module design. Below is a clickable prototype of our full design that we will keep refining.</p>
+      </div>
+
+      <div class="chapter-content">
+
+        <h3 class="chapter-toc__headline">Contents</h3>
+
+        <nav class="chapter-toc chapter-toc--2col">
+
+          <ul>
+
+            <li><a class="gweb-smoothscroll-control qp-ui" data-qp-ui="{ 'SmoothScroll': {} }" href="#purpose">Product Purpose</a></li>
+            <li><a class="gweb-smoothscroll-control qp-ui" data-qp-ui="{ 'SmoothScroll': {} }" href="#reqs">Full Design Requirements</a></li>
+          </ul>
+        </nav>
+
+        <div class="article-list">
+
+          <div id="purpose" class="article qp-ui" data-qp-ui="{ 'ScrollSpy': {} }">
+            <div class="icon-header icon-header--lg">
+              <img src="../imgs/requirements/purpose.svg">
+              <h1 class="article-title qp-ui" data-qp-ui="{ 'ResponsiveZippy': {} }">Product Purpose</h1>
+
+
+            </div>
+            <div class="article-content">
+              <div class="module-list">
+                <section class="moduleF1">
+                  <div class="module-body module-body--lg">
+                    <div>
+                     <!-- <h1 class="article-title qp-ui" data-qp-ui="{ 'ResponsiveZippy': {} }">Ads Module</h1>
+                      <h1 class="article-title qp-ui" data-qp-ui="{ 'ResponsiveZippy': {} }">Ad Stitcher</h1>
+                      <h1 class="article-title qp-ui" data-qp-ui="{ 'ResponsiveZippy': {} }">App</h1>
+                      <h1 class="article-title qp-ui" data-qp-ui="{ 'ResponsiveZippy': {} }">Freewheel</h1>-->
+
+                      <p style="text-align: justify;">Since MPS currently only services display ads, NBCU needed a system that could handle video ads. This new Video Ads Module is a rules engine that will allow the Ads team to control video ads configuration from MPS, which will serve as the front-end. By introducing this new level of functionality to MPS, NBCU will be able to reduce costs, enable advanced ad workflows, and allow for multiple ad experiences within a single application.</p>
+
+                      <p style="text-align: justify;">With how video ads are served today, a player makes an ad request to Freewheel that contains a lot of information about that stream. The Video Ads Module will allow Ads teams to manage the structure of that ad request quickly and on the fly. Today, if the Ad Integration and Architecture wants to modify a parameter in the ad request, they need the Ad Integration and Architecture team to log a ticket with a developer, and the developer needs to make a code change to change the value. The code change then has to be tested, deployed, and tested in production as well. To change five letters in an ad tag can take up to two weeks.</p>
+
+                      <p style="text-align: justify;">The Video Ads Module will give the Ad Integration and Architecture team the ability to make changes on their own, which will be faster and free from app updates or releases. Ultimately, the Video Ads Module will allow for more flexibility and scalability in serving up video ads.</p>
+
+                    </div>
+
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div id="reqs" class="article qp-ui" data-qp-ui="{ 'ScrollSpy': {} }">
+            <div class="icon-header icon-header--lg">
+              <img src="../imgs/requirements/reqs.svg">
+                <h1 class="article-title qp-ui" data-qp-ui="{ 'ResponsiveZippy': {} }">Full Design Requirements</h1>
+            </div>
+            <div class="article-content">
+              <div class="module-list">
+                <div>
+                  <section class="moduleF1">
+
+                    <div class="module-body module-body--lg">
+                      <div>
+                        <p><i>These features required in the full Ads Module design are ranked in order from highest priority to lowest priority.</i></p>
+                          <p style="margin-left: 40px"><i><font style="color:red">*</font> indicates that this feature is also present in the MVP design.</i></p>
+
+                        <ol><li><b>Hierarchy</b><font style="color:red">*</font></li>
+                          <ul><li>Users need to be able to access different player instances within each brand, each platform, and various modes within those instances to configure ad experiences.</li>
+                          <li>Users must be able to specify the brand, the platform, and then the mode.</li>
+                            <ul><li>The number of brands in the Ads Module should expand to 10-15.</li>
+                              <li>The minimum number of platforms is one, but there is no set maximum. Ideally, there would be 7-8 platforms for a brand.</li>
+                              <li>The 3 different modes are short-form VOD, long-form VOD, and live.</li></ul>
+                          </ul>
+
+                        <li><b>Features</b></li>
+                          <ul>
+                          <li>Features are synonymous to the components in MPS that can be enabled and added to the ad tags based on sales requirements.</li>
+                          <li>Features include: Nielson, Brightline, comScore, Adobe Analytics, Adobe Audience Manager</li>
+                          <li>Users need the ability to add features that get incorporated as values in the ad tag. They should also be able to edit the feature name and parameters to tailor it for each brand, platform, and content type.</li>
+                          <li>Configuration - Adding and Editing Features: Admin users need to be able to define new features, which may require new parameters, in the Video Ads Module. They should also be able to edit the feature name, code, and parameters.</li></ul>
+
+                        <li><b>Parameters</b></li>
+                          <ul>
+                          <li>Different parameters will be available depending on features being turned on or based on context.</li>
+                            <ul>
+                              <li>The majority of parameters are not tied to a feature.</li>
+                              <li>There can be up to 30 parameters and 22-24 of them are a part of the base set that is not feature-dependent.</li>
+                            </ul>
+                          <li>Users need the ability to edit parameters that help build the ad tag. This will prevent the Ad Integration and Architecture team from having to file tickets for minute parameter changes that take two weeks.<font style="color:red">*</font></li>
+                          <li>There are two types of parameter values: single and multiple.</li>
+                            <ul>
+                              <li>Less than 10% of parameters would involve multiple value entry.</li>
+                              <li>A majority of these parameter fields will be text input fields and users can input tokens that act as placeholder values (i.e., vod_{DEVICE} → vod_iphone).</li>
+                            </ul>
+                          <li>Configuration - Adding and Editing Parameters: Users also need to go into VAM and generate additional parameters/key values for specific brands, since they can highly vary. Along with adding new parameters, users should be able to edit them as well.</li>
+                          <li>Parameters that are currently not in scope but will be in the full Ads Module product are:</li>
+
+                      <iframe style="border: 1px solid #dddddd;" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTmXBvQ-Lt0ms9e4jmM0eu2ZYIG8GSmdtxulBgaNK9irHMcbDlwJiWOsyr2he--cWiBswwJJQGmiuz-/pubhtml?gid=1030071909&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+
+                          </ul>
+
+                        <li><b>A/B Test Mapping</b><font style="color:red">*</font></li>
+                          <ul>
+                            <li>Users will be able to configure A/B testing per brand within the Ads Module. This configuration will apply to each device per brand.</li>
+                            <li>A/B testing involves mapping the audience ID and the variant ID (assigned by a 3rd party user audience tracking system) to the experience template ID (which is configured in Freewheel).</li>
+                            <li>Users will also be able to input a description to name the type of mapping specified by those parameters.</li>
+                          </ul>
+
+                        <li><b>Global Brand Configurations</b></li>
+                          <ul>
+                            <li>Users should be able to configure parameters and A/B testing mapping per brand.</li>
+                          </ul>
+
+                        <li><b>Ads Module Environment</b><font style="color:red">*</font></li>
+                          <ul>
+                            <li>Users need to be able to selecting their access environment in the Ads Module. Environments include: QA, Staging, and Production.</li>
+                            <li>After users select the environment they want to access, they will input the corresponding network ID parameter that applies to all brands, platforms, and modes.</li>
+                          </ul>
+
+                        <li><b>Search</b></li>
+                          <ul><li>Users want to be able to easily find the brand/platform/content type they are looking for without having to scroll through entire lists.</li></ul>
+
+                        <li><b>Detailed Log of Changes</b></li>
+                          <ul><li>Based on research into the current change log in MPS, the activity log in the Video Ads Module should include more information, including what the change was and a notes section for users to provide further explanation.</li>
+                          <li>This can help troubleshoot and revert changes that were made.</li></ul>
+
+
+
+                      </div>
+
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div> <!-- ./article-list -->
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-L section-what-is-material color-default">&nbsp;</div>
+      <div class="footer-grid-L section-what-is-material color-default">
+        <a class="footer-text" href="../requirements/mvprequirements.html">
+          <i class="material-icons arrow-L">arrow_back</i>
+          <span class="direction">Previous</span>
+          <div>MVP Requirements</div>
+        </a>
+      </div>
+
+      <div class="footer-R section-animation color-default">&nbsp;</div>
+      <div class="footer-grid-R section-animation color-default">
+        <a class="footer-text" href="../design/mvpdesign.html">
+          <i class="material-icons arrow-R">arrow_forward</i>
+          <span class="direction">Next</span>
+          <div>MVP Design</div>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  //= ../template/js.html
+
+</body>
+</html>

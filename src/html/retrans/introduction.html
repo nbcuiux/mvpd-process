@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html class="qp-ui" data-qp-ui="{ 'Futurizr': { 'hasTouch': 'touch' } }">
+<head>
+  <meta charset="utf-8">
+  //= ../template/css.html
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.9/c3.min.css" rel="stylesheet" />
+  <title>MVPD Rights Management - Introduction</title>
+</head>
+<body class="site-material_ext_publish section-animation first-chapter color-branded-content qp-ui" data-qp-ui="{ 'Mask': {} }">
+  <header class="qp-ui" data-qp-ui="{ 'Peekaboo': { 'mobile': 72, 'desktop-sm': 72, 'default': 192 } }">
+    <div class="header-wrapper qp-ui" data-qp-ui="{ 'Peekaboo': { 'mobile': 28, 'desktop-sm': 28, 'default': 82 } }">
+      <div class="header-title">
+        <span class="section-title">MVPD - Rights Management</span>
+        <span class="chapter-title">
+          <span class="title-separator">—</span>
+          Introduction
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <button class="hamburger-button qp-ui" data-qp-ui="{ 'SideNavToggle': {} }" role="tab"><i class="material-icons material-spec-icon" title="Show navigation">menu</i></button>
+  </nav>
+
+  //= ../template/menu.html
+
+  <div id="grid-cont">
+    <section class="grid_outer chapter">
+      <h1 class="chapter-title">MVPD - Rights Management Introduction</h1>
+      <div class="chapter-intro">
+        <p style="text-align: justify;">The MVPD tool was created for authentication and authorization. It was developed as a collaboration between Content Distribution and DPIM (now GMO). MVPD, which stands for multichannel video programming distributor, is a service that provides multiple television channels. You can think of it as essentially a cable or satellite television service like Comcast or DirecTV. The MVPD tool allows for the management of MVPDs, brands, and partners currently. It’s the main hub for viewing information, sending out error messages, authenticating, onboarding, and launching on our sites and apps for partners.</p>
+      </div>
+
+      <div class="chapter-content">
+
+        <h3 class="chapter-toc__headline">Contents</h3>
+
+        <nav class="chapter-toc chapter-toc--2col">
+
+          <ul>
+
+            <li><a class="gweb-smoothscroll-control qp-ui" data-qp-ui="{ 'SmoothScroll': {} }" href="#rights">Onboarding & Managing Station Rights</a></li>
+            <li><a class="gweb-smoothscroll-control qp-ui" data-qp-ui="{ 'SmoothScroll': {} }" href="#goals">Project Goals</a></li>
+          </ul>
+        </nav>
+
+        <div class="article-list">
+
+          <div id="rights" class="article qp-ui" data-qp-ui="{ 'ScrollSpy': {} }">
+            <div class="icon-header icon-header--lg">
+                <img src="../imgs/icon/satellite_dish.svg"/>
+              <h1 class="article-title qp-ui" data-qp-ui="{ 'ResponsiveZippy': {} }">Onboarding & Managing Station Rights</h1>
+
+
+            </div>
+            <div class="article-content">
+              <div class="module-list">
+                <section class="moduleF1">
+                  <div class="module-body module-body--lg">
+                    <div>
+                     <!-- <h1 class="article-title qp-ui" data-qp-ui="{ 'ResponsiveZippy': {} }">Ads Module</h1>
+                      <h1 class="article-title qp-ui" data-qp-ui="{ 'ResponsiveZippy': {} }">Ad Stitcher</h1>
+                      <h1 class="article-title qp-ui" data-qp-ui="{ 'ResponsiveZippy': {} }">App</h1>
+                      <h1 class="article-title qp-ui" data-qp-ui="{ 'ResponsiveZippy': {} }">Freewheel</h1>-->
+
+                      <p style="text-align: justify;">Stations and their retrans rights currently live in multiple Google Sheets and they document not only all stations they have deals with, but they also convey whether there are restrictions on a station. If negotiations between an affiliate station and an MVPD are at an impasse, we will restrict our content until that contract is re-negotiated.</p>
+
+                      <p style="text-align: justify;">Today, this Google Sheet is being sent to our TKX services and their API has to determine whether to allow content playback or not. From the client side, when a user selects content to watch on the player, they go through an authentication and authorization process. There are two checks passed to TKX services: MVPD ID and client zip code. TKX services then performs the validation by looking up the zip code to identify the call sign in the GDT table. Once they know what market it is in, they will look up whether there’s a retrans or any restrictions associated with it.</p>
+
+                      <p style="text-align: justify;">The current workflows in place to onboard a station and manage their rights is very e-mail heavy and involves multiple teams. The Affiliates team owns the relationship with all the stations, the companies that own that station, and their rights. They are constantly in communication with the Content Distribution team, which manages the retrans rights Google Sheets. The Content Distribution team is always working with GMO as well. In this workflow, Content Distribution serves as the middle man between the Affiliates team and GMO.</p>
+                    </div>
+                    <div>
+                      <img src="../imgs/mvpd.png"/>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div id="goals" class="article qp-ui" data-qp-ui="{ 'ScrollSpy': {} }">
+            <div class="icon-header icon-header--lg">
+              <img src="../imgs/icon/satellite_dish.svg"/>
+                <h1 class="article-title qp-ui" data-qp-ui="{ 'ResponsiveZippy': {} }">Project Goals</h1>
+            </div>
+            <div class="article-content">
+              <div class="module-list">
+                <div>
+                  <section class="moduleF1">
+                    <div class="figure-group">
+                      <!-- <div class="figure-row">
+                        <figure class="">
+                          <div class="media">
+                            <img src="../imgs/introduction/diagram-2.png"/>
+                          </div>
+                        </figure>
+                      </div> -->
+                    </div>
+                    <div class="module-body module-body--lg">
+                      <div>
+                        <p style="text-align: justify;">This project aims to move station rights away from Google Sheets. By incorporating retrans rights into MVPD Admin, we are removing classified and valuable information off the web and into a more secure system that can only be accessed with approved NBCU credentials. There will also be greater accountability with information that gets inputted, changed, and deleted into the system compared to a Google Sheet.</p>
+
+                        <p style="text-align: justify;">Another overarching goal of this project is to move more of our services off from Anvato and other vendor dependencies. GMO’s objective is to build our own native services in house. Not only is there is a financial motivation, but from a management and a rollout standpoint, we’re not meeting the 48 hour SLAs and the process to go through a middle-man to get tables updated from our vendor is big. Building rights management and entitlement services in house and leveraging the tools we have will provide a better integration of our services. In addition to that, there would be a quicker turnaround time. Retrans rights in MVPD Admin would allow users to publish and save their changes so that it would update in the database immediately and regardless of environment, they would reflect in the actual calls. </p>
+                      </div>
+                      <div>
+                        <p style="text-align: justify;">The current workflows involved in onboarding stations and managing retrans rights can definitely be simplified and distilled to increase efficiency in our company. Having the retrans rights live in the MVPD Admin can redefine the way the Affiliates team, Content Distribution, and GMO work. The heavy e-mail communication can be eliminated and more automation can be put in place to streamline entitlement services processes.</p>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div> <!-- ./article-list -->
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-L section-what-is-material color-default">&nbsp;</div>
+      <div class="footer-grid-L section-what-is-material color-default">
+        <a class="footer-text" href="../landing/index.html">
+          <i class="material-icons arrow-L">arrow_back</i>
+          <span class="direction">Previous</span>
+          <div>Landing Page</div>
+        </a>
+      </div>
+
+      <div class="footer-R section-animation color-default">&nbsp;</div>
+      <div class="footer-grid-R section-animation color-default">
+        <a class="footer-text" href="../retrans/operationsmanager.html">
+          <i class="material-icons arrow-R">arrow_forward</i>
+          <span class="direction">Next</span>
+          <div>Interview: Daily Operations Manager</div>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  //= ../template/js.html
+
+</body>
+</html>

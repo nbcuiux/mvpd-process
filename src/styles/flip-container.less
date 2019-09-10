@@ -1,0 +1,27 @@
+.flip-container {
+  perspective: 2000px;
+}
+.flip-container:hover .flipper {
+  transition: 0.9s cubic-bezier(0.59, 1.45, 0.69, 0.98);
+  transform: rotateY(180deg);
+}
+.flipper {
+  transition: 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  position: relative;
+}
+.flipper .front,
+.flipper .back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.flipper .front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+.flipper .back {
+  transform: rotateY(180deg);
+}

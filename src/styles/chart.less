@@ -1,0 +1,116 @@
+.chart {
+  padding: 0;
+  width: 100%;
+  min-height: 300px;
+  margin: 0 auto;
+  position: relative;
+  display: inline-block;
+  margin-top: 40px;
+}
+.chart .callout {
+  white-space: nowrap;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -250%);
+  font-weight: 100;
+  font-size: 80px;
+}
+.chart .callout span {
+  letter-spacing: -3px;
+}
+.chart #market-chart,
+.chart #nielson-chart {
+  width: 100%;
+  min-height: 300px;
+}
+.chart #nielson-chart ~ .legend {
+  border-top: none;
+  justify-content: center;
+}
+.chart #nielson-chart ~ .legend span {
+  margin-right: 40px;
+  letter-spacing: 1px;
+}
+.chart #nielson-chart ~ .legend span:last-child {
+  margin-right: 0;
+}
+.chart #nielson-chart ~ .legend span.link:before {
+  content: none;
+}
+.chart .legend {
+  border-top: 2px solid #2a3254;
+  padding-top: 18px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-around;
+}
+.chart .legend span {
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  font-size: 10px;
+  text-shadow: 0 0 2px #000;
+}
+.chart .legend span.link {
+  font-size: 13px;
+  min-width: auto;
+  width: auto;
+  padding: 0;
+  transition: color 0.6s cubic-bezier(0.59, 1.45, 0.69, 0.98);
+}
+.chart .legend span.link:before {
+  width: 1px;
+  content: "";
+  position: absolute;
+  border-right: dashed 1px gray;
+  height: 300px;
+  opacity: 0;
+  transform: translate(132px, -318px);
+  transition: opacity 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), transform 0.6s cubic-bezier(0.59, 1.45, 0.69, 0.98);
+}
+.chart .legend span.link:hover {
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+.chart .legend span.link--active,
+.chart .legend span.link--active:hover {
+  color: white;
+  border-bottom: 1px solid #fff;
+}
+.chart .legend span.link--active:before,
+.chart .legend span.link--active:hover:before {
+  opacity: 1;
+  transform: translate(16px, -318px);
+}
+.chart .legend span.link--active ~ .link:before,
+.chart .legend span.link--active:hover ~ .link:before {
+  transform: translate(-100px, -318px);
+}
+.chart svg .c3-line,
+.chart svg .c3-circle {
+  fill: none;
+  filter: url(#f3) !important;
+  stroke: url(#bgGradient) !important;
+  stroke-width: 1px;
+  stroke-linecap: round;
+}
+.chart svg .c3-area {
+  fill: url(#bgGradient) !important;
+  stroke: none;
+}
+@media screen and (max-width: 1240px) {
+  .chart {
+    // width: 760px;
+
+    #market-chart {
+    // width: 760px;
+    }
+
+    .callout {
+      font-size: 48px;
+    }
+  }
+}

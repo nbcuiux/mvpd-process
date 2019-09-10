@@ -1,0 +1,196 @@
+
+.timecards {
+  display: flex;
+  flex-direction: column;
+}
+.timecards .timecards-arrow {
+  display: flex;
+  flex-direction: row;
+}
+.timecards .timecards-arrow .arrow {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.timecards .timecards-arrow .arrow .arrow-line {
+  width: 1px;
+  height: 32px;
+}
+.timecards .timecards-arrow .arrow .arrow-head {
+  display: flex;
+  flex-direction: row;
+  transform: translateX(1px);
+}
+.timecards .timecards-arrow .arrow .arrow-head-left,
+.timecards .timecards-arrow .arrow .arrow-head-right {
+  width: 14px;
+  height: 1px;
+}
+.timecards .timecards-arrow .arrow .arrow-head-left {
+  transform-origin: right;
+  transform: rotate(45deg);
+}
+.timecards .timecards-arrow .arrow .arrow-head-right {
+  transform-origin: left;
+  transform: rotate(-45deg);
+}
+.timecards .timecards-arrow .arrow + div {
+  padding: 18px 24px;
+  flex: 21;
+}
+.timecards .timecards-item input {
+  display: none;
+}
+.timecards .timecards-item input ~ label {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0;
+}
+.timecards .timecards-item input ~ label .segment {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.timecards .timecards-item input ~ label .segment .line {
+  width: 1px;
+  height: 100%;
+}
+.timecards .timecards-item input ~ label .segment .check {
+  align-self: center;
+  border: solid 1px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  padding: 6px;
+}
+.timecards .timecards-item input ~ label .segment .check img {
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s 0s cubic-bezier(0.59, 1.45, 0.69, 0.98);
+  height: 100%;
+}
+.timecards .timecards-item input ~ label .segment .check .circle {
+  width: 16px;
+  height: 16px;
+  border: solid 0px;
+  border-radius: 16px;
+  transform: scale(0);
+  transition: all 0.3s 0s cubic-bezier(0.59, 1.45, 0.69, 0.98);
+  border-color: transparent;
+  opacity: 0;
+}
+.timecards .timecards-item input ~ label .card {
+  display: flex;
+  flex-direction: row;
+  margin: 3px 0;
+  border-radius: 3px;
+  overflow: hidden;
+  flex: 21;
+  height: auto;
+  width: 100%;
+  transition: padding 0.3s cubic-bezier(0.59, 1.45, 0.69, 0.98);
+  padding: 18px 24px;
+}
+.timecards .timecards-item input ~ label .card .text {
+  margin-right: 11%;
+  flex: 4;
+  cursor: default;
+}
+.timecards .timecards-item input ~ label .card .text h3 {
+  font-size: 21px;
+  font-weight: 300;
+  margin-bottom: 0px;
+}
+.timecards .timecards-item input ~ label .card .text p {
+  pointer-events: none;
+  opacity: 0;
+  display: none;
+  font-size: 17px;
+  font-weight: 300;
+}
+.timecards .timecards-item input ~ label .card .text p + p {
+  font-size: 13px;
+  line-height: 1.4em;
+}
+.timecards .timecards-item input ~ label .card iframe {
+  flex: 6;
+  display: none;
+  height: 100%;
+}
+.timecards .timecards-item input ~ label .card .video-js {
+  flex: 5;
+  margin-left: 18%;
+  display: none;
+  min-height: 320px;
+  height: 100%;
+}
+.timecards .timecards-item input:checked ~ label .segment .line:first-child {
+  flex: 1;
+}
+.timecards .timecards-item input:checked ~ label .segment .line:last-child {
+  flex: 8;
+}
+.timecards .timecards-item input:checked ~ label .segment .check img {
+  transition: all 0.3s 0.3s cubic-bezier(0.59, 1.45, 0.69, 0.98);
+  opacity: 1;
+  transform: scale(1);
+}
+.timecards .timecards-item input:checked ~ label .segment .check .circle {
+  background: transparent;
+  border-width: 1px;
+  transform: scale(1);
+  opacity: 1;
+}
+.timecards .timecards-item input:checked ~ label .card {
+  padding: 32px 24px;
+}
+.timecards .timecards-item input:checked ~ label .card .text h3 {
+  margin-bottom: 12px;
+}
+.timecards .timecards-item input:checked ~ label .card .text p {
+  animation: show 0.3s 0.3s cubic-bezier(0.59, 1.45, 0.69, 0.98);
+  animation-fill-mode: forwards;
+  display: block;
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.timecards .timecards-item input:checked ~ label .card .text p + p {
+  animation: show 0.3s 0.39s cubic-bezier(0.59, 1.45, 0.69, 0.98);
+  animation-fill-mode: forwards;
+}
+.timecards .timecards-item input:checked ~ label .card iframe,
+.timecards .timecards-item input:checked ~ label .card .video-js {
+  display: block;
+}
+.timecards .timecards-item:first-child input ~ label .segment .line:first-child {
+  background: none;
+}
+@media screen and (max-width: 760px) {
+  .timecards .timecards-item input ~ label .segment {
+    flex: 2;
+  }
+  .timecards .timecards-item input ~ label .card {
+    flex-direction: column;
+    flex: 10;
+  }
+  .timecards .timecards-item input ~ label .card .text {
+    flex: 2;
+  }
+  .timecards .timecards-item input ~ label .card iframe {
+    flex: 3;
+  }
+  .timecards .timecards-arrow .arrow {
+    flex: 2;
+  }
+  .timecards .timecards-arrow .arrow + div {
+    flex: 10;
+  }
+}

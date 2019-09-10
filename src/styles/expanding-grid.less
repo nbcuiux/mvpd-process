@@ -1,0 +1,236 @@
+.expanding-grid {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.expanding-grid--4-column .tile {
+  margin-right: 12px;
+  min-width: calc(25% - 12px);
+}
+.expanding-grid--4-column .tile:nth-child(9n+8) {
+  margin-right: 0;
+}
+.expanding-grid--4-column .tile:nth-child(n + 9) {
+  margin-top: 12px;
+}
+.expanding-grid .expand {
+  display: flex;
+  margin-top: 12px;
+  flex: 4;
+  min-width: 100%;
+  margin-top: 0px;
+}
+.expanding-grid .expand .column-outer,
+.expanding-grid .expand .column-inner {
+  transition: height 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+}
+.expanding-grid .expand .column-outer {
+  left: 0;
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  height: 0px;
+}
+.expanding-grid .expand .column-inner {
+  opacity: 0;
+  height: 0px;
+  position: relative;
+  width: 100%;
+}
+.expanding-grid .expand .column-inner .inner-content {
+  display: none;
+  height: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+.expanding-grid .expand .column-inner .inner-content .text,
+.expanding-grid .expand .column-inner .inner-content .expand-tile,
+.expanding-grid .expand .column-inner .inner-content .close-expand {
+  opacity: 0;
+  transition: opacity 0.3s 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.expanding-grid .expand .column-inner .inner-content .text {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+}
+.expanding-grid .expand .column-inner .inner-content .text h3 {
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 18px;
+}
+.expanding-grid .expand .column-inner .inner-content .text p {
+  font-size: 19px;
+  font-weight: 300;
+}
+.expanding-grid .expand .column-inner .inner-content .expand-tile {
+  flex: 4;
+  margin-right: 12%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+}
+.expanding-grid .expand .column-inner .inner-content .expand-tile iframe {
+  height: 100%;
+}
+.expanding-grid .expand .column-inner .inner-content .expand-tile img {
+  height: 100%;
+}
+.expanding-grid .expand .column-inner .inner-content .close-expand {
+  width: 30px;
+  height: 30px;
+  align-self: flex-start;
+  margin-top: 24px;
+}
+.expanding-grid input {
+  display: none;
+}
+.expanding-grid input:checked + .tile:after {
+  top: auto;
+  border: solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-width: 21px;
+  transform: translateY(159px);
+}
+.expanding-grid input:checked ~ .expand {
+  margin-top: 12px;
+}
+.expanding-grid input:checked ~ .expand .column-inner,
+.expanding-grid input:checked ~ .expand .column-outer {
+  opacity: 1;
+  height: 500px;
+}
+.expanding-grid input:checked ~ .expand ~ .expand {
+  margin-top: 0;
+}
+.expanding-grid input:checked ~ .expand ~ .expand .column-inner,
+.expanding-grid input:checked ~ .expand ~ .expand .column-outer {
+  opacity: 0;
+  height: 0px;
+}
+.expanding-grid #tile-1:checked ~ .expand #content-1 {
+  display: flex;
+}
+.expanding-grid #tile-1:checked ~ .expand #content-1 .text,
+.expanding-grid #tile-1:checked ~ .expand #content-1 .expand-tile,
+.expanding-grid #tile-1:checked ~ .expand #content-1 .close-expand {
+  opacity: 1;
+}
+.expanding-grid #tile-2:checked ~ .expand #content-2 {
+  display: flex;
+}
+.expanding-grid #tile-2:checked ~ .expand #content-2 .text,
+.expanding-grid #tile-2:checked ~ .expand #content-2 .expand-tile,
+.expanding-grid #tile-2:checked ~ .expand #content-2 .close-expand {
+  opacity: 1;
+}
+.expanding-grid #tile-3:checked ~ .expand #content-3 {
+  display: flex;
+}
+.expanding-grid #tile-3:checked ~ .expand #content-3 .text,
+.expanding-grid #tile-3:checked ~ .expand #content-3 .expand-tile,
+.expanding-grid #tile-3:checked ~ .expand #content-3 .close-expand {
+  opacity: 1;
+}
+.expanding-grid #tile-4:checked ~ .expand #content-4 {
+  display: flex;
+}
+.expanding-grid #tile-4:checked ~ .expand #content-4 .text,
+.expanding-grid #tile-4:checked ~ .expand #content-4 .expand-tile,
+.expanding-grid #tile-4:checked ~ .expand #content-4 .close-expand {
+  opacity: 1;
+}
+.expanding-grid #tile-5:checked ~ .expand #content-5 {
+  display: flex;
+}
+.expanding-grid #tile-5:checked ~ .expand #content-5 .text,
+.expanding-grid #tile-5:checked ~ .expand #content-5 .expand-tile,
+.expanding-grid #tile-5:checked ~ .expand #content-5 .close-expand {
+  opacity: 1;
+}
+.expanding-grid #tile-6:checked ~ .expand #content-6 {
+  display: flex;
+}
+.expanding-grid #tile-6:checked ~ .expand #content-6 .text,
+.expanding-grid #tile-6:checked ~ .expand #content-6 .expand-tile,
+.expanding-grid #tile-6:checked ~ .expand #content-6 .close-expand {
+  opacity: 1;
+}
+.expanding-grid #tile-7:checked ~ .expand #content-7 {
+  display: flex;
+}
+.expanding-grid #tile-7:checked ~ .expand #content-7 .text,
+.expanding-grid #tile-7:checked ~ .expand #content-7 .expand-tile,
+.expanding-grid #tile-7:checked ~ .expand #content-7 .close-expand {
+  opacity: 1;
+}
+.expanding-grid #tile-8:checked ~ .expand #content-8 {
+  display: flex;
+}
+.expanding-grid #tile-8:checked ~ .expand #content-8 .text,
+.expanding-grid #tile-8:checked ~ .expand #content-8 .expand-tile,
+.expanding-grid #tile-8:checked ~ .expand #content-8 .close-expand {
+  opacity: 1;
+}
+.expanding-grid .tile {
+  cursor: pointer;
+  margin-bottom: 0;
+  flex: 1;
+  display: flex;
+  padding: 60px 24px;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 3px;
+}
+.expanding-grid .tile h3 {
+  font-size: 21px;
+  text-align: center;
+  white-space: nowrap;
+  font-weight: 300;
+  margin-bottom: 0;
+  border-bottom: solid 1px transparent;
+}
+.expanding-grid .tile img {
+  height: 72px;
+  margin-bottom: 32px;
+}
+@media screen and (max-width: 760px) {
+  .expanding-grid--4-column label.tile {
+    margin-top: 0px;
+    margin-right: 12px;
+    padding: 48px 12px;
+    min-width: calc(50% - 12px);
+  }
+  .expanding-grid--4-column label.tile:nth-of-type(2n+2) {
+    margin-right: 0;
+  }
+  .expanding-grid--4-column label.tile:nth-child(n + 5) {
+    margin-top: 12px;
+  }
+  .expanding-grid--4-column label.tile:after {
+    display: none;
+  }
+  .expanding-grid--4-column input:checked ~ .expand .column-outer,
+  .expanding-grid--4-column input:checked ~ .expand .column-inner {
+    height: 648px;
+  }
+  .expanding-grid--4-column .expand .column-inner .inner-content {
+    flex-direction: column-reverse;
+  }
+  .expanding-grid--4-column .expand .column-inner .inner-content .expand-tile {
+    flex: intial;
+    margin-right: 0;
+    height: 40%;
+  }
+  .expanding-grid--4-column .expand .column-inner .inner-content .close-expand {
+    align-self: flex-end;
+  }
+}
